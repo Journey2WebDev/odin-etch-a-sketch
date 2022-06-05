@@ -1,4 +1,8 @@
-.parentDiv{
+.bodyDiv {
+  flex-direction: column;
+}
+
+.bodyDiv, .rowDiv{
   display: flex;
   justify-content: stretch;
   align-items: stretch;
@@ -8,26 +12,10 @@
   margin: 0;
 }
 
-.parentDiv div{
+.bodyDiv div{
   flex: 1 1 0;
   background-color: gray;
-  border: 2pt solid black;
+  border: 1pt solid black;
   padding: 0;
   margin: 0;
 }
-
-/* .div-styles1 {
-  flex: 1 1 0;
-  background-color: gray;
-  border: 2pt solid black;
-  padding: 0;
-  margin: 0;
-}
-
-.div-styles2 {
-  flex: 1 1 0;
-  background-color: gray;
-  border: 2pt solid black;
-  padding: 0;
-  margin: 0;
-} */
