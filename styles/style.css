@@ -1,0 +1,33 @@
+.parentDiv{
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  /* width: 100vh; */
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.parentDiv div{
+  flex: 1 1 0;
+  background-color: gray;
+  border: 2pt solid black;
+  padding: 0;
+  margin: 0;
+}
+
+/* .div-styles1 {
+  flex: 1 1 0;
+  background-color: gray;
+  border: 2pt solid black;
+  padding: 0;
+  margin: 0;
+}
+
+.div-styles2 {
+  flex: 1 1 0;
+  background-color: gray;
+  border: 2pt solid black;
+  padding: 0;
+  margin: 0;
+} */
