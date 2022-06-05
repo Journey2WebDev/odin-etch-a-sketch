@@ -1,5 +1,5 @@
 // n => number of squares per row or column ( 2 <= n <= 100 )
-let n = 5;
+let n = 8;
 
 // Create a div to contain all row/column divs (ie, all squares in grid)
 const bodyDiv = document.createElement('div');
@@ -20,23 +20,25 @@ for(row=1; row<=n; row++){
   }
 }
 
-// Grab a square in grid
-let temp = document.getElementById("row-1").firstChild;
-temp.addEventListener("mouseenter", function(event){
-  event.target.style.backgroundColor="orange";
-  // reset the color after a short delay
-  // setTimeout(function() {
-  //   event.target.style.backgroundColor = "";
-  // }, 250);
-});
+// Mouse event function
+function mouseEvent(square){
+  square.addEventListener("mouseenter", function(event){
+    event.target.style.backgroundColor="orange";
+  });
 
-temp.addEventListener("mouseleave", function(event){
-  event.target.style.backgroundColor="";
-  // reset the color after a short delay
-  // setTimeout(function() {
-  //   event.target.style.backgroundColor = "";
-  // }, 250);
-});
+  square.addEventListener("mouseleave", function(event){
+    event.target.style.backgroundColor="";
+  });
+}
+
+// Iterate over grid to add [mouseenter] and [mouseleave] events
+for(row=1; row<=n; row++){
+  let temp = document.getElementById("row-" + row).childNodes;
+  temp.forEach(mouseEvent);
+}
+
+
+
 
 
 
