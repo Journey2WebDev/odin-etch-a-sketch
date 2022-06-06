@@ -9,25 +9,25 @@ body {
   
 }
 
-.bodyDiv {
+.gridDiv {
+  width: 90vh;
+  height: 90vh;
   flex-direction: column;
   border: 1px solid black;
 }
 
-.bodyDiv, .rowDiv{
+.gridDiv, .rowDiv{
   display: flex;
   justify-content: stretch;
   align-items: stretch;
-  width: 90vh;
-  height: 90vh;
   padding: 0;
   margin: 0;
 }
 
-.bodyDiv div{
+.gridDiv div{
   flex: 1 0 0;
   /* background-color: gray; */
-  /* border: 1pt solid black; */
+  border: 1pt solid black;
   padding: 0;
   margin: 0;
 }
@@ -43,7 +43,7 @@ body {
   border: 1px solid black;
 }
 
-.headerBtn{
+#updateGridBtn{
   height: 50px;
   width: 100px;
   border-radius: 25%;
