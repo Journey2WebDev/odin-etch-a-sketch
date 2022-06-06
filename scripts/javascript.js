@@ -20,29 +20,48 @@ for(row=1; row<=n; row++){
   }
 }
 
-// Mouse event function
-function mouseEvent(square){
-  square.addEventListener("mouseenter", function(event){
-    event.target.style.backgroundColor="orange";
+// Toggle drawing mode (boolean; currently SHIFT)
+let tempVar = false;
+window.addEventListener("keydown", checkKeyPressed, false);
+
+function checkKeyPressed(evt) {
+  if (evt.keyCode == "16") {
+    tempVar = !tempVar;
+  }
+}
+
+// [mouseenter] and [mouseleave] event for grid squares
+function beginDrawing(square){
+  square.addEventListener("mouseenter", function(evt){
+    if(tempVar){
+      evt.target.style.backgroundColor="orange";
+    };
   });
 
-  square.addEventListener("mouseleave", function(event){
-    event.target.style.backgroundColor="";
+  square.addEventListener("mouseleave", function(evt){
+    evt.target.style.backgroundColor="";
   });
 }
 
 // Iterate over grid to add [mouseenter] and [mouseleave] events
 for(row=1; row<=n; row++){
   let temp = document.getElementById("row-" + row).childNodes;
-  temp.forEach(mouseEvent);
+  temp.forEach(beginDrawing);
 }
 
-// Create header at top
-const headerDiv = document.createElement('div');
-headerDiv.classList.add("headerDiv");
-document.body.appendChild(headerDiv);
 
-let headerBtn = document.createElement('button');
-headerBtn.classList.add("headerBtn");
-headerDiv.appendChild(headerBtn);
+
+
+// Create header at top
+// const headerDiv = document.createElement('div');
+// headerDiv.classList.add("headerDiv");
+// document.body.appendChild(headerDiv);
+
+// let headerBtn = document.createElement('button');
+// headerBtn.classList.add("headerBtn");
+// headerDiv.appendChild(headerBtn);
+
+
+
+
 
