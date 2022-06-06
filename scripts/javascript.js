@@ -1,5 +1,5 @@
 // n => number of squares per row or column ( 2 <= n <= 100 )
-let n = 8;
+let n = 10;
 
 // Create a div to contain all row/column divs (ie, all squares in grid)
 const bodyDiv = document.createElement('div');
@@ -37,8 +37,12 @@ for(row=1; row<=n; row++){
   temp.forEach(mouseEvent);
 }
 
+// Create header at top
+const headerDiv = document.createElement('div');
+headerDiv.classList.add("headerDiv");
+document.body.appendChild(headerDiv);
 
-
-
-
+let headerBtn = document.createElement('button');
+headerBtn.classList.add("headerBtn");
+headerDiv.appendChild(headerBtn);
 
