@@ -25,20 +25,6 @@ function clearGrid(parent) {
   }
 }
 
-// Prompt user for grid size
-function getGridSize(){
-  let squaresPerSide = parseInt(prompt("Enter number of squares per side (2 <= n <= 100)"));
-  // Check for valid input
-  if(isNaN(squaresPerSide) || (squaresPerSide < 2) || (squaresPerSide > 100)){
-    alert("Please enter a number between 2 and 100");
-    return;
-  } else {
-    // return Math.floor(squaresPerSide);
-    clearGrid(gridDiv);
-    createGrid(Math.floor(squaresPerSide));
-  }
-}
-
 function createGrid(squaresPerSide){
   for(row=1; row<=squaresPerSide; row++){
     // Create rows
@@ -55,7 +41,12 @@ function createGrid(squaresPerSide){
   }
 }
 
-
+function createMouseEvents(squaresPerSide){
+  for(row=1; row<=squaresPerSide; row++){
+    let temp = document.getElementById("row-" + row).childNodes;
+    temp.forEach(beginDrawing);
+  }
+}
 
 // [mouseenter] and [mouseleave] event for grid squares
 function beginDrawing(square){
@@ -70,12 +61,19 @@ function beginDrawing(square){
   });
 }
 
-// Iterate over grid to add [mouseenter] and [mouseleave] events
-// for(row=1; row<=n; row++){
-//   let temp = document.getElementById("row-" + row).childNodes;
-//   temp.forEach(beginDrawing);
-// }
-
-
+// Prompt user for grid size
+function getGridSize(){
+  let squaresPerSide = parseInt(prompt("Enter number of squares per side (2 <= n <= 100)"));
+  // Check for valid input
+  if(isNaN(squaresPerSide) || (squaresPerSide < 2) || (squaresPerSide > 100)){
+    alert("Please enter a number between 2 and 100");
+    return;
+  } else {
+    // Erase old grid; draw new grid; populate [mouseenter] and [mouseleave] events
+    clearGrid(gridDiv);
+    createGrid(Math.floor(squaresPerSide));
+    createMouseEvents(squaresPerSide);
+  }
+}
 
 
