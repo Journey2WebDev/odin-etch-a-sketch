@@ -27,6 +27,21 @@ function toggleGridlines(){
 let toggleGridBtn = document.getElementById("toggleGridlinesBtn");
 toggleGridBtn.addEventListener("click",toggleGridlines);
 
+// Button: Erase all
+function eraseAll(){
+  let gridRows = document.getElementsByClassName('rowDiv')
+  
+  for(r=0; r<gridRows.length; r++){
+    let gridSquares = gridRows[r].childNodes;
+    for(s=0; s<gridSquares.length; s++){
+      gridSquares[s].style.backgroundColor = "";
+    }
+  }
+}
+
+let eraseAllBtn = document.getElementById("eraseAllBtn");
+eraseAllBtn.addEventListener("click",eraseAll);
+
 
 // Toggle: drawing mode (boolean; currently SHIFT (keyCode 16))
 let allowDrawing = true;
@@ -46,7 +61,7 @@ document.body.appendChild(gridDiv);
 // Clear the Grid
 function clearGrid(parent) {
   while (parent.firstChild) {
-      parent.removeChild(parent.firstChild);
+    parent.removeChild(parent.firstChild);
   }
 }
 
@@ -98,6 +113,8 @@ function getGridSize(){
     clearGrid(gridDiv);
     createGrid(Math.floor(squaresPerSide));
     createMouseEvents(squaresPerSide);
+    // Gridlines are off by default
+    gridlinesOn = false;
   }
 }
 
