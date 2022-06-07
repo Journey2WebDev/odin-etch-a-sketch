@@ -1,9 +1,34 @@
 
-// Update Grid Button
-let updateGridBtn = document.getElementById("updateGridBtn");
-updateGridBtn.addEventListener("click",getGridSize)
+// Create Grid Button
+let createGridBtn = document.getElementById("createGridBtn");
+createGridBtn.addEventListener("click",getGridSize);
 
-// Toggle drawing mode (boolean; currently SHIFT (keyCode 16))
+// Toggle: Gridlines (ie, border around grid squares)
+let gridlinesOn = false;
+
+function toggleGridlines(){
+  let gridRows = document.getElementsByClassName('rowDiv')
+  
+  for(r=0; r<gridRows.length; r++){
+    let gridSquares = gridRows[r].childNodes;
+
+    for(s=0; s<gridSquares.length; s++){
+      if(gridlinesOn == false){
+        gridSquares[s].style.border = "1px solid lightgray";
+      } else if(gridlinesOn == true){
+        gridSquares[s].style.border = "";
+      }
+    }
+  }
+
+  gridlinesOn = !gridlinesOn;
+}
+
+let toggleGridBtn = document.getElementById("toggleGridlinesBtn");
+toggleGridBtn.addEventListener("click",toggleGridlines);
+
+
+// Toggle: drawing mode (boolean; currently SHIFT (keyCode 16))
 let allowDrawing = true;
 window.addEventListener("keydown", checkKeyPressed, false);
 
@@ -56,9 +81,9 @@ function beginDrawing(square){
     };
   });
 
-  square.addEventListener("mouseleave", function(evt){
-    evt.target.style.backgroundColor="";
-  });
+  // square.addEventListener("mouseleave", function(evt){
+  //   evt.target.style.backgroundColor="";
+  // });
 }
 
 // Prompt user for grid size

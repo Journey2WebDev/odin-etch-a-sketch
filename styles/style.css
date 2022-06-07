@@ -26,11 +26,13 @@ body {
 
 .gridDiv div{
   flex: 1 0 0;
-  /* background-color: gray; */
-  border: 1pt solid black;
   padding: 0;
   margin: 0;
 }
+
+/* .rowDiv div{
+  border: 1pt solid black;
+} */
 
 /* Header */
 #headerDiv{
@@ -43,7 +45,7 @@ body {
   border: 1px solid black;
 }
 
-#updateGridBtn{
+#createGridBtn, #toggleGridlinesBtn{
   height: 50px;
   width: 100px;
   border-radius: 25%;
