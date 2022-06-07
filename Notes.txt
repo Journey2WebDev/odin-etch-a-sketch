@@ -1,8 +1,39 @@
 Things to add / include:
 
-- Button to choose [mouseenter] color within grid
+# to Look up
+- How to display splash screen on page loag
+  Will give "how to" for different features and allow (force) selection of grid size
 
-- Place a div down right side of header/grid.
-    This will (in theory) be where all toggle options etc are placed
+
+# Programmatic structure
+- Create global variable holding either (a) all rows + squares, or (b) all squares
+- Add pop-up text over pencil and eraser icons
+- Change 'drawing mode' to be activated by 'click'
+
+
+# Adding color
+-RGB: 3 text fields &/or 3 dials to choose RGB values. Have picture next to dials which show the 
+color chosen.
+- A 'histories' series of boxes, which show the ~5 most recently used colors. Clicking on a box will select the given color
+- A selection of ~12 common colors
+= Both of above should update RGB fields and picture with appropriate numbers
+
+
+# Buttons, toggles, etc
+- Button to change from 'drawing mode' to 'erase mode'
+
+
+# Other
+- Add text somewhere (eg, lower-right corner) showing dimensions of currently selected grid (eg, 25x25)
+- Place a div down right side of header/grid. Could be where (eg) color options are stored
+
+
+# Fixes & Bugs
+- "Create Grid!" button: If user clicks 'Cancel', this should not prompt pop-up of "Please enter a number between..."
+
+
+# References
+https://www.makeuseof.com/how-to-make-pixel-art-beginners-guide/
+  Pixel art images for: pencil, eraser, eyedropper, bucket
 
 
