@@ -8,10 +8,32 @@ createGridBtn.addEventListener("click", getGridSize);
 // Button: Choose color
 // --------------------------------------------------
 let colorBox = document.getElementById("colorBox");
-currentColor = colorBox.value;
+currentColor = colorBox.value; // Black as default color
 
 colorBox.addEventListener("change", chooseColor);
 function chooseColor(){
+  currentColor = colorBox.value;
+}
+
+// --------------------------------------------------
+// Button: Eraser
+// --------------------------------------------------
+
+let eraserBtn = document.getElementById("eraserBtn");
+eraserBtn.addEventListener("click", clickEraser);
+
+function clickEraser(){
+  currentColor = "#FFFFFF";
+}
+
+// --------------------------------------------------
+// Button: Pencil
+// --------------------------------------------------
+
+let pencilBtn = document.getElementById("pencilBtn");
+pencilBtn.addEventListener("click", clickPencil);
+
+function clickPencil(){
   currentColor = colorBox.value;
 }
 
@@ -110,7 +132,7 @@ function createMouseEvents(squaresPerSide){
 }
 
 // --------------------------------------------------
-// [mouseenter] and [mouseleave] event for grid squares
+// Function to allow drawing on [mouseenter] of a square
 // --------------------------------------------------
 function beginDrawing(square){
   square.addEventListener("mouseenter", function(evt){
@@ -131,12 +153,11 @@ function getGridSize(){
   // let squaresPerSide = parseInt(prompt("Enter number of squares per side (2 <= n <= 100)"));
   let squaresPerSide = prompt("Enter number of squares per side (2 <= n <= 100)");
 
-  // Bug to fix: Update so 'cancel' doesn't prompt "Please enter a..." message
-  // console.log("Input box contents: " + squaresPerSide);
-  // console.log("Input box type: " + typeof squaresPerSide);
-
   // Check for valid input
-  if(isNaN(squaresPerSide) || (squaresPerSide < 2) || (squaresPerSide > 100)){
+  if(squaresPerSide === null){
+    return;
+  }
+  else if(isNaN(squaresPerSide) || (squaresPerSide < 2) || (squaresPerSide > 100)){
     alert("Please enter a number between 2 and 100");
     return;
   } else {

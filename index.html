@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Etch-a-Sketch</title>
+  <title>Coloring Pag</title>
   <link rel="stylesheet" href="./styles/style.css">
   <script src="./scripts/javascript.js" defer></script>
 </head>
@@ -14,13 +14,21 @@
 
   <!-- Header -->
   <div id="headerDiv">
-    Press [SHIFT] to toggle drawing mode<br>
+    <div id="headerText">Press [SHIFT] to toggle drawing on / off</div>
     
-    <button id="createGridBtn">Create grid!</button>
-    <button id="toggleGridlinesBtn">Gridlines</button>
-    <button id="eraseAllBtn">Erase all</button>
+    <div id="headerBI">
+      <div id="headerBtns">
+        <button id="createGridBtn">Create grid!</button>
+        <button id="toggleGridlinesBtn">Gridlines</button>
+        <button id="eraseAllBtn">Erase all</button>
+      </div>
 
-    <input type="color" value="#000000" id="colorBox">
+      <div id="headerIcons">
+        <input type="image" src="./images/Pencil.png" id="pencilBtn" alt="Pencil Button">
+        <input type="image" src="./images/Eraser.png" id="eraserBtn" alt="Eraser Button">
+        <input type="color" value="#000000" id="colorBox">
+      </div>
+    </div>
 
   </div>
 

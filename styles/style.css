@@ -30,32 +30,68 @@ body {
   margin: 0;
 }
 
-/* .rowDiv div{
-  border: 1pt solid black;
-} */
-
 /* Header */
 #headerDiv{
   background-color: lightgray;
   height: 10vh;
   width: 85vh;
   /* display: flex; */
-  justify-content: center;
-  align-items: center;
   border: 1px solid black;
 }
 
+#headerText{
+  height: 45px;
+  font-size: 16pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#headerBI{
+  display: flex;
+  justify-content: space-between;
+}
+
+#headerBtns{
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 5px;
+  height: 45px;
+  width: 400px;
+}
+
+#headerIcons{
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  padding: 5px;
+  height: 45px;
+  width: 400px;
+}
+
+
 #createGridBtn, #toggleGridlinesBtn,  #eraseAllBtn{
-  height: 50px;
+  height: 40px;
   width: 100px;
   border-radius: 25%;
+  font-size: 12pt;
 }
 
 #colorBox{
   margin: 0;
   padding: 0;
-  width: 50px;
-  height: 50px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  outline: none;
+}
+
+#eraserBtn, #pencilBtn{
+  margin: 0;
+  padding: 0;
+  width: 40px;
+  height: 40px;
   border: none;
   outline: none;
 }
